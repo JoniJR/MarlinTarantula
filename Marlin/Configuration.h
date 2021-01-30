@@ -28,13 +28,13 @@
 
 ***********************************************************************/
 
-#define PRINTER_NAME "TEVO Tarantula (EasyConfig)"  // Change this to whatever you wish, or leave it as it is.
+#define PRINTER_NAME "Joni V1.1"  // Change this to whatever you wish, or leave it as it is.
                                                     // NOTE: Whatever you put here will have " Ready..." appended to it.
 
 /**
  * Equipment options
  */
-//#define LARGE_BED
+#define LARGE_BED
 #define SDSUPPORT
 //#define CHANGE_Y_DIRECTION        // If your bed homes in the wrong direction (it should move front to back) enable this.
 //#define CHANGE_X_DIRECTION        // If your X carriage homes in the wrong direction (it should move right to left) enable this.
@@ -67,14 +67,14 @@
  * Primary Extruder steps per mm (plugged in to E0 port on controller)
  * (How to calibrate: https://toms3d.org/2014/04/06/3d-printing-guides-calibrating-your-extruder/)
  */
-#define E0_STEPS      100 // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
-//#define CHANGE_E0_DIRECTION   // If your extruder is going backwards, enable this.
+#define E0_STEPS      398.6 // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
+#define CHANGE_E0_DIRECTION   // If your extruder is going backwards, enable this.
 
 /**
  * Z Axis steps per mm (Default for stock lead screw is 1600)
  * If you install a lead screw with a different pitch and/or lead, change this
  */
-#define Z_STEPS      1600 // Stock lead screw
+#define Z_STEPS      1780.9 // Stock lead screw
 
 /**
  * Z-Probe type (must be none or one of them)
@@ -154,15 +154,27 @@
 #define  hot_Kp 9.84
 #define  hot_Ki 0.50
 #define  hot_Kd 48.17
+
+// TEVO Tarantula Custom PID Settings - Hotend - Kiko
+//#define  hot_Kp 18.28
+//#define  hot_Ki 0.94
+//#define  hot_Kd 88.96
+
 // FIND YOUR OWN: "M303 E0 C8 S200" to run autotune on the hotend at 200 degreesC for 8 cycles.
 // More info here: http://reprap.org/wiki/PID_Tuning
 
 /**
  * TEVO Tarantula Custom PID Settings - Stock Heatbed
  */
-#define  bed_Kp 984.88
-#define  bed_Ki 193.91
-#define  bed_Kd 1250.55
+//#define  bed_Kp 984.88
+//#define  bed_Ki 193.91
+//#define  bed_Kd 1250.55
+
+// TEVO Tarantula Custom PID Settings - Heatbed with borosilicate glass
+  #define  bed_Kp 322.41
+  #define  bed_Ki  57.88
+  #define  bed_Kd 448.99
+
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 // More info here: http://reprap.org/wiki/PID_Tuning
 
@@ -186,7 +198,7 @@
  *       PLA and ABS will appear under both Custom Command and Prepare.
  */
 #define Hot_PLA     215
-#define Bed_PLA      75
+#define Bed_PLA      60
 
 #define Hot_ABS 		240
 #define Bed_ABS 		100
@@ -900,7 +912,7 @@
 #if ENABLED(DUAL_EXTRUDER)
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, Z_STEPS, E0_STEPS, E1_STEPS }
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, Z_STEPS, E0_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 85.0, 87.7, Z_STEPS, E0_STEPS }
 #endif
 
 /**
@@ -1207,9 +1219,9 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 200
+#define X_BED_SIZE 198
 #if ENABLED(LARGE_BED)
-  #define Y_BED_SIZE 280
+  #define Y_BED_SIZE 260
 #else
   #define Y_BED_SIZE 200
 #endif
