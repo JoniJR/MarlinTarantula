@@ -28,7 +28,7 @@
 
 ***********************************************************************/
 
-#define PRINTER_NAME "Joni V1.1"  // Change this to whatever you wish, or leave it as it is.
+#define PRINTER_NAME "JoniJR V1.1"  // Change this to whatever you wish, or leave it as it is.
                                                     // NOTE: Whatever you put here will have " Ready..." appended to it.
 
 /**
@@ -74,7 +74,7 @@
  * Z Axis steps per mm (Default for stock lead screw is 1600)
  * If you install a lead screw with a different pitch and/or lead, change this
  */
-#define Z_STEPS      1780.9 // Stock lead screw
+#define Z_STEPS      1604.84 // Stock lead screw
 
 /**
  * Z-Probe type (must be none or one of them)
@@ -911,8 +911,9 @@
  */
 #if ENABLED(DUAL_EXTRUDER)
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, Z_STEPS, E0_STEPS, E1_STEPS }
+  #error
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 85.0, 87.7, Z_STEPS, E0_STEPS }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 79.64, 80.7, Z_STEPS, E0_STEPS }
 #endif
 
 /**
