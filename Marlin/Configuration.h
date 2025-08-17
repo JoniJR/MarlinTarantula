@@ -137,7 +137,7 @@
 
 // Name displayed in the LCD "Ready" message and Info menu
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
-#define CUSTOM_MACHINE_NAME "Joni v2.1.1"
+#define CUSTOM_MACHINE_NAME "Hadar&Pai_2.1"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1312,7 +1312,7 @@
  * Primary Extruder steps per mm (plugged in to E0 port on controller)
  * (How to calibrate: https://toms3d.org/2014/04/06/3d-printing-guides-calibrating-your-extruder/)
  */
-#define E0_STEPS 408.6      //398.6 // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
+#define E0_STEPS 404.55 // 408.6 398.6 // Stock extruder. If you have a Tevo Titan, try 400 then calibrate.
 #define Z_STEPS 1604.84 // Stock lead screw
 /**
  * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
@@ -1678,7 +1678,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38, 0, -1.5 }
+#define NOZZLE_TO_PROBE_OFFSET { -38, 0, -0.5 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1922,8 +1922,8 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 198
-#define Y_BED_SIZE 260
+#define X_BED_SIZE 195
+#define Y_BED_SIZE 250
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -2268,7 +2268,7 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 10              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
